@@ -1,0 +1,46 @@
+@import-normalize;
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-size: 18px;
+  line-height: 1.38;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4 {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
