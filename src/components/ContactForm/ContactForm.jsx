@@ -13,16 +13,17 @@ import icon from "../../images/svg-sprite.svg";
 export default function ContactForm() {
   const {
     register,
-    handleSubmit,
+    // handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  // const onSubmit = (data) => console.log(data);
 
   return (
     <Box>
       <Title>Request Callback</Title>
-      <Form onSubmit={handleSubmit(onSubmit)} 
+      <Form 
+      // onSubmit={handleSubmit(onSubmit)} 
       name="contact" method="post" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <FirstInput
