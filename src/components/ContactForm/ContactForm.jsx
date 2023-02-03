@@ -22,7 +22,8 @@ export default function ContactForm() {
   return (
     <Box>
       <Title>Request Callback</Title>
-      <Form onSubmit={handleSubmit(onSubmit)} name="contact" method="post">
+      <Form onSubmit={handleSubmit(onSubmit)} 
+      name="contact" method="post" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <FirstInput
           {...register("name", { required: "This is a required field" })}
