@@ -36,13 +36,36 @@ export const Title = styled.h2`
 
 export const Form = styled.form``;
 
-export const Label = styled.label`
-  position: absolute;
+export const InputBox = styled.div`
+position: relative;
+margin-bottom: 34px;
 `;
 
-export const FirstInput = styled.input`
-  ${input}
-  margin-bottom: 16px;
+export const Input = styled.input`
+  ${input};
+  margin-bottom: 5px;
+`;
+
+
+export const Label = styled.label`
+${mq.mobileOnly} {
+  font-size: 16px;
+line-height: 1.43;
+}
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  color: ${colors.grayText};
+
+  ${Input}:focus ~ &,
+  ${Input}:valid ~ & 
+  {
+    top: -25px;
+    left: 0;
+  }
+   
 `;
 
 export const ErrorMessage = styled.p`
@@ -53,10 +76,6 @@ export const ErrorMessage = styled.p`
   margin-bottom: 5px;
 `;
 
-export const SecInput = styled.input`
-  ${input}
-  margin-bottom: 24px;
-`;
 
 export const Button = styled.button`
   ${btn}

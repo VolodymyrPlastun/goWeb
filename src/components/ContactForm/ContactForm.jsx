@@ -1,11 +1,12 @@
 import {
   Box,
-  FirstInput,
+  Input,
   Title,
-  SecInput,
   Form,
   Button,
   ErrorMessage,
+  InputBox,
+  Label,
 } from "./ContactForm.styled";
 import { useForm } from "react-hook-form";
 import icon from "../../images/svg-sprite.svg";
@@ -13,24 +14,26 @@ import icon from "../../images/svg-sprite.svg";
 export default function ContactForm() {
   const {
     register,
+    handleSubmit,
     formState: { errors },
   } = useForm();
-
 
   return (
     <Box>
       <Title>Request Callback</Title>
-      <Form 
+      <Form onSubmit={handleSubmit}
       name="contact" method="post" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
-        <FirstInput
+        <InputBox>
+        
+        <Input
           {...register("name", { required: "This is a required field" })}
           name="name"
           type="text"
-          placeholder="Enter your name"
-          autoFocus
+          required
         />
-        {errors.name && (
+            <Label>Enter your name</Label>
+            {errors.name && (
           <ErrorMessage>
             <svg width="16" height="15">
               <use href={`${icon}#icon-worning`}></use>
@@ -38,12 +41,18 @@ export default function ContactForm() {
             {errors.name.message}
           </ErrorMessage>
         )}
-        <SecInput
+        </InputBox>
+        
+    
+        <InputBox>
+        
+        <Input
           {...register("email", { required: "This is a required field" })}
           name="email"
           type="email"
-          placeholder="Enter email*"
+          required
         />
+        <Label>Enter email*</Label>
         {errors.email && (
           <ErrorMessage>
             <svg width="16" height="15">
@@ -52,6 +61,9 @@ export default function ContactForm() {
             {errors.email.message}
           </ErrorMessage>
         )}
+        </InputBox>
+        
+        
         <Button type="submit" variant={"accent"}>
           Send
         </Button>
